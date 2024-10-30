@@ -6,6 +6,10 @@
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
+<!-- TODO table: dataset variable, meaning, units (eg healthy, mildew) - see walkthrough2-->
+<!-- TODO detail count of each, size in px -->
+<!-- TODO add project terms and jargon -->
+
 ## Business Requirements
 
 The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
@@ -72,7 +76,7 @@ Train data - target: infected or not; features: all images
 <!-- TODO List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports. -->
 <!-- TODO Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type). -->
 
-### Page 1: Quick Project Summary
+### Page 1: Brief Project Summary
 
 - Brief Project Summary:
 
@@ -82,6 +86,7 @@ Train data - target: infected or not; features: all images
     - What is mildew? **ANSWER**
     <!-- - TODO LINK TO FURTHER INFO -->
     - Link here
+    <!-- TODO define terms and jargon -->
 
   - Project Dataset:
         <!-- TODO update numbers accordingly -->
@@ -94,11 +99,11 @@ Train data - target: infected or not; features: all images
 
 ### Page 2: Findings Report
 
-- A report detailing the study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew
+- A report detailing the study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew, through exploratory data analysis.
 
 ### Page 3: Leaves Visualiser
 
-*This will answer business requirement no.1*
+  *This will answer business requirement no.1*
 
 - Checkbox 1 - Mean average and variability image differences visualisation
 - Checkbox 2 - Differences between infected and uninfected leaves
@@ -106,9 +111,9 @@ Train data - target: infected or not; features: all images
 <!-- TODO add (you may use the Kaggle repository that was provided to you). -->
 - A link to download a set of cherry leaf images for live prediction
 
-### Page 4: Infection Detector
+### Page 4: Interactive Infection Detector
 
-*This will answer business requirement no.2*
+  *This will answer business requirement no.2*
 
 - Business requirement 2 information: 'The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew'
 
@@ -121,17 +126,23 @@ Train data - target: infected or not; features: all images
 
 ### Page 4: Hypothesis and Validation
 
+- Before the analysis, we knew that this page would be required for describing each project hypothesis, conclusions and how each was validated. 
+- After the data analysis, we can conclude that:
+  - HYPOTHESIS: We suspect infected leaves will be visually differentiated with a white powdery substance on their surface
+    - Correct. The visual representation as seen in the leaf visualiser image montage for each class shows clear visual differences between healthy and infected leaves.
+  - 
 <!-- TODO ensure all relevant hypothesis are included!  -->
-- Details of each project hypothesis
-  - Details of how this was validated across the project
+ <!-- - Details of each project hypothesis- Details of how this was validated across the project -->
 
 ### Page 5: ML Performance Metrics
 
 A technical page displaying model performance:
 
-1. Label Frequencies for Train, Validation and Test Sets
-2. Model History - Accuracy and Losses
-3. Model evaluation result
+1. Label distribution for Train, Validation and Test Sets
+2. Model iterations and findings
+3. Considerations and conclusions after pipeline is trained
+4. Present ML pipeline steps
+5. Pipeline performance (accuracy and loss)
 
 ## Unfixed Bugs
 <!-- TODO document any unfixed bugs -->
@@ -171,6 +182,8 @@ A technical page displaying model performance:
 <!-- TODO edit media credits -->
 <!-- - The photos used on the home and sign-up page are from This Open-Source site.
 - The images used for the gallery page were taken from this other open-source site. -->
+Thank you to Code Institute and Kaggle for their cherry-leaves dataset during this project.
+<!-- TODO link again here -->
 
 ## Acknowledgements (optional)
 <!-- TODO add Acknowledgements  -->
