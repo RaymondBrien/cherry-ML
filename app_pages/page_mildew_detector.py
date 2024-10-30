@@ -1,4 +1,4 @@
 import streamlit as st
 
-def page_project_hypothesis_body():
+def page_mildew_detector_body():
     st.write('TODO')
