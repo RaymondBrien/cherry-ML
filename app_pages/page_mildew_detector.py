@@ -28,14 +28,13 @@ def page_mildew_detector_body():
     st.write('---')
 
     st.info(
-        f"* Download a set of leaves containing both powdery
-        mildew or healthy leaves for live prediction. "
-        f" Images can be downloaded from
-        [kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves)"
+        "* Download a set of leaves containing both powdery mildew"
+        "or healthy leaves for live prediction.\n"
+        "Images can be downloaded from "
+        "[**here**](https://www.kaggle.com/codeinstitute/cherry-leaves)\n"
     )
     st.write(
-        f"**Upload a clear picture of a cherry leaf for live predictions.
-        You may select more than one.**"
+        f"**Upload a clear picture of a cherry leaf for live predictions. You may select more than one.**"
     )
     images_buffer = st.file_uploader(' ',
                                      accept_multiple_files=True)
@@ -67,8 +66,7 @@ def make_live_predict(images_buffer):
             img_array = np.array(img_pil)
             st.image(
                 img_pil,
-                caption=f"Image Size: {img_array.shape[1]}px
-                width x {img_array.shape[0]}px height")
+                caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
             version = 'v6'  # TODO update as needed
 
@@ -85,5 +83,6 @@ def make_live_predict(images_buffer):
         if not df_report.empty:
             st.success("Analysis Report")
             st.table(df_report)
-            st.markdown(download_dataframe_as_csv(
-                df_report), unsafe_allow_html=True)
+            st.markdown(
+                download_dataframe_as_csv(df_report),
+                unsafe_allow_html=True)
