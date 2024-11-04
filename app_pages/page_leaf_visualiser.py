@@ -1,8 +1,9 @@
-import os, time, itertools, random
+import os, itertools, random
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from time import sleep
 from matplotlib.image import imread
 
 
@@ -21,19 +22,16 @@ def page_leaf_visualiser_body():
 
     # Page title
     st.header("Cherry Leaves Visualiser")
-    st.success(
+    st.write(
         "As part of the dataset exploration phase, this page provides a "
         "reference for observing the visual differences between **healthy** "
         "Cherry Leaves and Cherry Leaves infected with **powdery mildew** "
         "in answer to Business Requirement No.1 as defined by the client.\n"
     )
-
+    st.write("---")
+    
     # Show the image montage
     if st.checkbox("Image Montage"):
-        # Show a spinner during a process
-        with st.spinner(text="In progress"):
-            time.sleep(3)
-            st.success("Done")
         st.write(
             "* Click the 'Create Montage' button for an image montage of "
             "healthy or infected leaves\n")
@@ -49,15 +47,18 @@ def page_leaf_visualiser_body():
             "across the surface, usually as white spots or patches.\n"
         )
 
-        my_data_dir = 'inputs/cherryleaves_dataset/cherry-leaves'
-        # TODO correct labels path - images should be from inputs
-        labels = os.listdir(my_data_dir + '/validation')
+        my_data_dir = 'inputs/cherry-leaves-dataset/cherry-leaves'
+        labels = os.listdir(my_data_dir + '/test')
         label_to_display = st.selectbox(
-            label="Select label:", options=labels, index=0)
+            label="**Select leaf type:**", options=labels, index=0)
         if st.button("Create Montage"):
-            image_montage(dir_path=my_data_dir + '/test',
-                          label_to_display=label_to_display,
-                          nrows=8, ncols=3, figsize=(10, 25))
+            # Show a spinner during a process
+            with st.spinner(text="Loading"):
+                sleep(7)
+
+            image_montage(dir_path=my_data_dir + '/train',
+                            label_to_display=label_to_display,
+                            nrows=8, ncols=3, figsize=(10, 25))
         st.write("---")
 
     # show mean average image per class
