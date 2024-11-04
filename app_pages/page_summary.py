@@ -7,18 +7,14 @@ def page_summary_body():
 
 
     st.info(
+        # TODO edit line breaks
         "**What is Mildew?**\n"
         "Mildew refers to a white powdery fungal growth that can affect the leaves of plants, including crops. It is a common plant disease that can reduce the health and productivity of affected plants.\n\n"
         "**Project Terms and Jargon:**\n"
         "- **Healthy** leaves are those without any visible signs of powdery mildew.\n"
         "- **Unhealthy** leaves are those that show white powdery mildew on its surface, characteristic of mildew infection.\n"
         "\nThe goal of this project is to build a system that can accurately detect the presence of powdery mildew on leaf images, in order to help identify and manage the client's business effectively."
-    )   
-
-    # link README file, for user access to full project documentation
-    st.write(
-        f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://github.com/RaymondBrien/cherry-ml).")
+    )
 
     # from README file - "Business Requirements" section
     st.success(
@@ -32,3 +28,8 @@ def page_summary_body():
         "   - We aim to use the CNN to map relationships between features and labels.\n"
         "   - We aim to build a binary classifier and generate reports."
     )
+
+    # link README file, for user access to full project documentation
+    st.write(
+        f"* For additional information, please visit and **read** the "
+        f"[Project README file](https://github.com/RaymondBrien/cherry-ml).")
