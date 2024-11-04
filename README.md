@@ -2,7 +2,7 @@
 
 Powdery Mildew in Cherry Leaves Detector is a machine learning app designed to predict whether a cherry leaf is healthy or infected with powdery mildew, a common fungal disease. By processing images of cherry leaves, the app performs a binary classification to help determine the health status of a given leaf.
 
-[View the live project here](https://cherry-leaf-mildew-detector.herokuapp.com/)
+[View the live project here](https://cherry-ml-2c1328018520.herokuapp.com/)
 
 TODO add image
 
