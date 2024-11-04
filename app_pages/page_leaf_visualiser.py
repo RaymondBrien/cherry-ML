@@ -20,7 +20,7 @@ def page_leaf_visualiser_body():
         "and Cherry Leaves infected with **powdery mildew**, in answer to "
         "Business Requirement No.1 as defined by the client.\n"
     )
-    version = 'v1'  # TODO confirm version
+    version = 'v6'  # TODO confirm version
     if st.checkbox("Differences between average and variability images"):
 
         avg_var_healty = plt.imread(f"outputs/{version}/avg_var_healthy.png")
