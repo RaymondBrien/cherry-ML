@@ -1,5 +1,6 @@
+import os
+import pandas as pd
 import streamlit as st
-
 
 def page_summary_body():
 
@@ -24,7 +25,21 @@ def page_summary_body():
         "the client's business effectively."
     )
     st.write('---')
-    
+
+    st.subheader('Dataset Summary:')
+    df = pd.DataFrame({
+        "Total Contents:": ['4208'],
+        "Image Size": ['256 x 256 px'],
+        "Labels": ['Healthy, Powdery Mildew'],
+    })
+    st.dataframe(df)
+    st.write(
+        "Click here for data source: \n"
+        "[Kaggle](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)"
+    )
+
+    st.write('---')
+
     st.subheader("Business Requirements:\n")
     st.subheader("1.\n")
 
@@ -32,7 +47,7 @@ def page_summary_body():
         "**The client is interested in conducting a study to visually differentiate a cherry** "
         "**leaf that is healthy from one that contains powdery mildew**\n"
         "* *This relates to data exploration and visualisation*\n"
-        )
+    )
     st.info(
         "Technical Implications:"
     )
