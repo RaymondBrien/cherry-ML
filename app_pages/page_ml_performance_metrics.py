@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from matplotlib.image import imread
-from src.machine_learning.eval import load_test_evaluation
+from src.machine_learning.eval import load_evaluation
 
 
 def page_ml_performance_metrics():
@@ -73,13 +73,13 @@ def page_ml_performance_metrics():
 
     st.write("### Generalised Performance on Test Set")
     data = pd.DataFrame(
-        load_test_evaluation(version),
+        load_evaluation(version, dataset='test'),
         index=['Loss', 'Accuracy'])
     
     # show stats df
     stats = st.dataframe(data)
     # to dynamically update text for future models
-    accuracy_reading = format((data.at['Accuracy', 0]*100), '.2f')
+    accuracy_reading = format((data.at['Accuracy', 'test']*100), '.2f')
 
     st.success(
         f"**The general accuracy of ML model is {accuracy_reading}%** "
@@ -96,5 +96,12 @@ def page_ml_performance_metrics():
         "This indicates that the model is capable of predicting the presence of powdery mildew in cherry "
         "leaves with a high degree of accuracy, and able to achieve the required performance metrics.\n"
     )
+    st.write("Extra stats: performance on validation and train sets")
 
-    load_test_evaluation(version)
+    # Display each evaluation in Streamlit as a DataFrame
+    datasets = load_evaluation(version, dataset=['train', 'val'])
+
+    for name, eval_data in datasets.items():
+        st.write(f"### Performance on {name.capitalize()} Set")
+        df = pd.DataFrame(eval_data, index=['Loss', 'Accuracy'])
+        st.dataframe(df)
