@@ -89,19 +89,22 @@ def page_ml_performance_metrics():
 
     st.write("Further info:")
     st.info(
-        # TODO show train and validation evaluation results too, generated from their pkl files
         "The ML model was trained on a dataset consisting of 4208 cherry leaves in total. "
         "Testing involved an unseen set of 422 cherry leaves, split during the data preparation phase.\n"
         f"The model achieved an accuracy of {accuracy_reading}% on the test set.\n"
         "This indicates that the model is capable of predicting the presence of powdery mildew in cherry "
         "leaves with a high degree of accuracy, and able to achieve the required performance metrics.\n"
     )
-    st.write("Extra stats: performance on validation and train sets")
 
-    # Display each evaluation in Streamlit as a DataFrame
-    datasets = load_evaluation(version, dataset=['train', 'val'])
-
-    for name, eval_data in datasets.items():
-        st.write(f"### Performance on {name.capitalize()} Set")
-        df = pd.DataFrame(eval_data, index=['Loss', 'Accuracy'])
-        st.dataframe(df)
+    # display validation evaluation as streamlit dataframe
+    datasets = load_evaluation(version, dataset=['val'])
+    st.write(f"### Performance on {dataset.name.capitalize()} Set")
+    df = pd.DataFrame(eval_data, index=['Loss', 'Accuracy'])
+    st.dataframe(df)
+    
+    st.write(
+        "It can be observed that sufficient accuracy is also present on the validation set, "
+        "based on the trained model's evaluation pkls.\n"
+        "These evaluations were held to observe the model during the training process for "
+        "thoroughness."
+        )
