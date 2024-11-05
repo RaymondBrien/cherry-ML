@@ -97,10 +97,9 @@ def page_ml_performance_metrics():
     )
 
     # display validation evaluation as streamlit dataframe
-    datasets = load_evaluation(version, dataset=['val'])
-    st.write(f"### Performance on {dataset.name.capitalize()} Set")
-    df = pd.DataFrame(eval_data, index=['Loss', 'Accuracy'])
-    st.dataframe(df)
+    st.write('Extra Stats')
+    dataset = load_evaluation(version, dataset=['val'])
+    st.dataframe(dataset)
     
     st.write(
         "It can be observed that sufficient accuracy is also present on the validation set, "
