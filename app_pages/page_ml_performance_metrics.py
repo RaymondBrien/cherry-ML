@@ -61,31 +61,40 @@ def page_ml_performance_metrics():
 
     )
 
-    col1, col2 = st.columns(2)
-    with col1:
-        model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
-        st.image(model_acc, caption='Model Training Accuracy')
-    with col2:
-        model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
-        st.image(model_loss, caption='Model Training Losses')
+    # show model acc 
+    model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
+    st.image(model_acc, caption='Model Training Accuracy')
+    
+    # show model loss
+    model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
+    st.image(model_loss, caption='Model Training Losses')
+    
     st.write("---")
 
     st.write("### Generalised Performance on Test Set")
-    st.dataframe(pd.DataFrame(
+    data = pd.DataFrame(
         load_test_evaluation(version),
-        index=['Loss', 'Accuracy']))
+        index=['Loss', 'Accuracy'])
+    
+    # show stats df
+    stats = st.dataframe(data)
+    # to dynamically update text for future models
+    accuracy_reading = format((data.at['Accuracy', 0]*100), '.2f')
 
     st.success(
-        # TODO update
-        f"**The general accuracy of ML model is 99.76%!!** "
+        f"**The general accuracy of ML model is {accuracy_reading}%** "
     )
 
     st.write("---")
+
     st.write("Further info:")
     st.info(
         # TODO show train and validation evaluation results too, generated from their pkl files
-        f"The ML model was trained on a dataset consisting of 4208 cherry leaves. The model was evaluated on a separate set of 422 cherry leaves.\n"
-        f"The model achieved an accuracy of 99.76% on the test set.\n"
-        f"This indicates that the model is capable of predicting the presence of powdery mildew in cherry leaves with a high degree of accuracy.\n"
+        "The ML model was trained on a dataset consisting of 4208 cherry leaves in total. "
+        "Testing involved an unseen set of 422 cherry leaves, split during the data preparation phase.\n"
+        f"The model achieved an accuracy of {accuracy_reading}% on the test set.\n"
+        "This indicates that the model is capable of predicting the presence of powdery mildew in cherry "
+        "leaves with a high degree of accuracy, and able to achieve the required performance metrics.\n"
     )
+
     load_test_evaluation(version)
