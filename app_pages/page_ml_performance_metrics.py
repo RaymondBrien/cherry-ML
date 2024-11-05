@@ -15,13 +15,11 @@ def page_ml_performance_metrics():
     class_distribution = plt.imread(
         f"outputs/{version}/class_distribution.png")
 
-    st.image(class_distribution,
-             caption='Labels Distribution on Train, Validation and Test Sets')
-
-
     st.header("ML Performance Metrics")
     st.write("### Train, Validation and Test Set: Labels Frequencies")
 
+    st.image(class_distribution,
+             caption='Labels Distribution on Train, Validation and Test Sets')
     st.write(
         "The dataset was split into 3 sets: Train, Validation and Test according "
         "to the following ratios:\n"
