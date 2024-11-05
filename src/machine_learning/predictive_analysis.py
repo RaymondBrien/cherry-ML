@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 from PIL import Image
-# from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
 from src.data_management import load_pkl_file
 
 
@@ -52,7 +52,7 @@ def load_model_and_predict(my_image, version):
     """
 
     model = load_model(
-        f"outputs/v1/trainings/train-9/powdery_mildew_detector.h5")
+        f"outputs/{version}/cherry-tree-model.h5")
 
     pred_proba = model.predict(my_image)[0, 0]
 
