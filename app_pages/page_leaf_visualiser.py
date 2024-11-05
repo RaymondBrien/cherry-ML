@@ -18,9 +18,12 @@ def page_leaf_visualiser_body():
     """
 
     # Define model for output images source
-    version = 'v6'
+    version = 'v6'  # change as needed
 
-    # Page title
+    # instruction for users
+    CHECKBOX_INSTRUCTION = '\n**Click the checkbox below**\n'
+
+    # page title
     st.header("Cherry Leaves Visualiser")
     st.write(
         "As part of the dataset exploration phase, this page provides a "
@@ -30,7 +33,11 @@ def page_leaf_visualiser_body():
     )
     st.write("---")
     
-    # Show the image montage
+    st.header("Firstly, let's explore the dataset.")
+    st.write("*Click the image montage checkbox to view an image montage showing a selection fo the raw dataset to see what images were used to build this model.*")
+    st.write(CHECKBOX_INSTRUCTION)
+
+    # show the image montage
     if st.checkbox("Image Montage"):
         st.write(
             "* Click the 'Create Montage' button for an image montage of "
@@ -51,6 +58,8 @@ def page_leaf_visualiser_body():
         labels = os.listdir(my_data_dir + '/test')
         label_to_display = st.selectbox(
             label="**Select leaf type:**", options=labels, index=0)
+        st.write(CHECKBOX_INSTRUCTION)
+
         if st.button("Create Montage"):
             # Show a spinner during a process
             with st.spinner(text="Loading"):
@@ -60,6 +69,17 @@ def page_leaf_visualiser_body():
                             label_to_display=label_to_display,
                             nrows=8, ncols=3, figsize=(10, 25))
         st.write("---")
+
+    st.write('---')
+
+    st.header("Now an average image:")
+    st.write(
+        '*We have made an image for both healthy and infected leaves which* '
+        '*is a mean average representation of the dataset.*\n'
+        '*This can help us understand patterns better and get a big-picture look* '
+        '*at what the images in our dataset from the client show.*\n'
+        )
+    st.write(CHECKBOX_INSTRUCTION)
 
     # show mean average image per class
     if st.checkbox("Show average image per class"):
@@ -96,12 +116,21 @@ def page_leaf_visualiser_body():
 
         st.write("---")
 
+    st.write('---')
+
+    st.header("What's different between an average healthy and an average infected leaf?")
+    st.write(
+        "*Let's examine what the differences are by comparing the average images we saw above* "
+        "*which represent a collection of either healthy or infected leaves.*\n"
+        )
+    st.write(CHECKBOX_INSTRUCTION)
+
     # show difference image between average classes
     if st.checkbox("Difference between average healthy and average infected leaves"):
         diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
         # TODO try other way around: x-y but also y-x to see if there are any insights?
-        st.success(
+        st.write(
             "Whilst we can see from the image montage that there are, more "
             "often than not, clear visual differences between individual healthy "
             "and infected leaves, this difference image does not clearly show "
@@ -116,6 +145,8 @@ def page_leaf_visualiser_body():
         )
 
         st.image(diff_between_avgs, caption='Difference between average images')
+
+        st.write('---')
 
     
 
