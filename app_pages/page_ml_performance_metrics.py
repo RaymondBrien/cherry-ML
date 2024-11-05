@@ -23,10 +23,10 @@ def page_ml_performance_metrics():
     st.write(
         "The dataset was split into 3 sets: Train, Validation and Test according "
         "to the following ratios:\n"
-        # TODO fill in missing percentages
-        "* Set: % \n"
-        "* Set: % \n"
-        "* Set: % \n"
+        
+        "* Train Set: 70% \n"
+        "* Validation Set: 10% \n"
+        "* Test Set: 20% \n"
     )
     st.write("Dataset breakdown")
     # TODO include images representing raw balance of classes
@@ -95,7 +95,7 @@ def page_ml_performance_metrics():
     )
 
     # display validation evaluation as streamlit dataframe
-    st.write('Extra Stats')
+    st.write('Extra Stats:')
     dataset = load_evaluation(version, dataset=['val'])
     st.dataframe(pd.DataFrame(dataset, index=['Loss', 'Accuracy']))
     
