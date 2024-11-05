@@ -78,7 +78,7 @@ def make_live_predict(images_buffer):
             plot_predictions_probabilities(pred_proba, pred_class)
 
             df_report = df_report.append(
-                {"Name": image.name, 'Result': pred_class}, ignore_index=True)
+                {'Name': image.name, 'Result': pred_class, 'Probability (%)': format((pred_proba*100), '.2f')}, ignore_index=True)
 
         if not df_report.empty:
             st.success("Analysis Report")
