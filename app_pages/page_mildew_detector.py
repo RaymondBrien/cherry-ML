@@ -68,7 +68,7 @@ def make_live_predict(images_buffer):
                 img_pil,
                 caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
-            version = 'v6'  # TODO update as needed
+            version = 'v6'
 
             resized_img = resize_input_image(img=img_pil, version=version)
 
