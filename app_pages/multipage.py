@@ -18,3 +18,9 @@ class MultiPage:
     def run(self):
         page = st.sidebar.radio('Menu', self.pages, format_func=lambda page: page['title'])
         page['function']()
+        st.write('---')
+        st.info(
+            'For more detailed information, visit the project '
+            'readme available here: \n'
+            '[README](https://github.com/RaymondBrien/cherry-ml)'
+        )
