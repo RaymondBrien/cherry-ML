@@ -71,7 +71,3 @@ def page_summary_body():
         "   - We aim to build a binary classifier and generate reports."
     )
     st.write('---')
-
-    st.write(
-        f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://github.com/RaymondBrien/cherry-ml).")
