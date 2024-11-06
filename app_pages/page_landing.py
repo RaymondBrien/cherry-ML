@@ -8,9 +8,5 @@ def landing_page():
         'to view project breakdowns, dataset visuals and project requirements.\n'
         )
 
-    st.info(
-        'If you would like to see further details, please view the project '
-        'readme available here: \n'
-        '\n[README](https://github.com/RaymondBrien/cherry-ml)'
-    )
+
         
