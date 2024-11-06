@@ -248,8 +248,7 @@ The app is hosted on Heroku, following these deployment steps:
 - Code Institute Slack community
 - [Towards Data Science](https://towardsdatascience.com/)
 - [Sources](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
-- [Further Information\](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)
-- Alpkaan Celik
+- [Further Information](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)
 
 - **Mentorship**: Special thanks to my mentor, **Precious Ijege**, for their invaluable support and guidance throughout the project.
 
