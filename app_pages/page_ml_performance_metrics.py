@@ -132,6 +132,8 @@ def page_ml_performance_metrics():
         "leaves with a high degree of accuracy, and able to achieve the required performance metrics.\n"
     )
 
+    st.write('Extra Stats: validation evaluation')
     # display validation evaluation as streamlit dataframe
-    st.write('Extra Stats:')
-    dataset = load_evaluation(version, dataset=['val'])
+    st.dataframe(pd.DataFrame(
+        load_evaluation(version, dataset='val'),
+        index=['Loss', 'Accuracy']))
