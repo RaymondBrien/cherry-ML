@@ -1,10 +1,13 @@
-import streamlit as st
-import matplotlib.pyplot as plt
+import random
+import pickle
 import pandas as pd
+import streamlit as st
+import plotly.express as px
+import matplotlib.pyplot as plt
 
 from matplotlib.image import imread
+from tensorflow.keras.preprocessing import image
 from src.machine_learning.eval import load_evaluation
-
 
 def page_ml_performance_metrics():
     """
@@ -105,3 +108,42 @@ def page_ml_performance_metrics():
         "These evaluations were held to observe the model during the training process for "
         "thoroughness."
         )
+    
+    st.write('---')
+
+    # interactive plotly plot
+    st.plotly_chart(interactive_plot())
+
+def interactive_plot():
+    """
+    TODO
+    """
+
+    # load test evaluation metrics from the pickle file
+    version = 'v6'
+    file_path = f'outputs/{version}/test-evaluation.pkl'
+
+    with open(file_path, 'rb') as file:
+        evaluation_data = pickle.load(file)
+
+    data = {
+        "Metric": ["Accuracy", "Loss"],
+        "Value": [evaluation_data[0], evaluation_data[1]]
+    }
+
+    df = pd.DataFrame(data)
+
+    # create plotly bar chart
+    fig = px.bar(
+        df, x="Metric", y="Value",
+        title=f"Model Performance on Test Set (Version {version})",
+        labels={"Value": "Score", "Metric": "Performance Metric"},
+        text="Value"
+    )
+
+    # customize layout
+    fig.update_traces(texttemplate='%{text:.2f}', textposition='outside')
+    fig.update_layout(yaxis=dict(range=[0, 1]), bargap=0.3)  # Adjust y-axis range for clarity
+
+    # display the plot
+    fig.show()
