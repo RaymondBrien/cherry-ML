@@ -16,7 +16,8 @@ Powdery Mildew in Cherry Leaves Detector is a machine learning app designed to p
 6. [Dashboard Design](#dashboard-design)
 7. [Technologies Used](#technologies-used)
 8. [Deployment](#deployment)
-9. [Credits and Acknowledgments](#credits-and-acknowledgments)
+9. [Bugs](#bugs-fixed)
+10. [Credits and Acknowledgments](#credits-and-acknowledgments)
 
 ---
 
@@ -217,7 +218,7 @@ The app is hosted on Heroku, following these deployment steps:
 - **Deploy Branch**: Deploy from linked GitHub repository.
 - **Configure Stack**: Adjust Heroku stack version as required (resolved Python compatibility issues by switching to stack 20).
 
-### Bugs (fixed):
+### *Bugs (fixed)*
 
 - Heroku stack error on initial deployment: python ~3.8.19 is used per runtime.txt. The following steps were completed to solve the issue.
 
