@@ -21,6 +21,11 @@ Powdery Mildew in Cherry Leaves Detector is a machine learning app designed to p
 10. [Credits and Acknowledgments](#credits-and-acknowledgments)
 
 ---
+> [!IMPORTANT]  
+> Per the request of the client, the dataset must remain private, and not available for public access. You must download the kaggle dataset using the Data Collection notebook before images are available to access. 
+> Live predictions using the trained model will still be available via the dashboard. Image montages will not be available until the dataset is downloaded locally using the aforementioned notebook.
+
+
 
 ## **Business Context**
 
