@@ -4,8 +4,6 @@ Powdery Mildew in Cherry Leaves Detector is a machine learning app designed to p
 
 [View the live project here](https://cherry-ml-2c1328018520.herokuapp.com/)
 
-<!-- TODO add image -->
-
 ---
 
 ## **Table of Contents**
@@ -60,7 +58,7 @@ By implementing this ML workflow, Farmy & Foods hopes to significantly reduce in
 
 ---
 
-## **Project Hypothesis**
+## **Project Hypothesis and Validation Steps**
 
 - **Hypothesis 1**: It is hypothesized that infected cherry tree leaves will be visually differentiable from healthy cherry tree leaves. Specifically, white powdery mildew will be present on the surface of
 the majority of infected leaves within the dataset.
@@ -72,8 +70,12 @@ the majority of infected leaves within the dataset.
 - **Hypotheesis 2**: It is hypothesised that using only the provided dataset, the ML model will be able to distinguish between a healthy cherry leaf and an infected cherry leaf with at least 97% accuracy.
 - **Validation**:
   - **Accuracy Evaluation on Test Set**: After model training, model evaluation will measure accuracy and loss readings. Accuracy above 97% per business requirement 2, will pass. This is ultimately the main business driver.
+  -**Model Output**: Accuracy 99.88% (*Pass True*)
 
-<!-- TODO add hypo 3 -->
+- **Hypothesis 3 (technical)**: It is hypothesised that at least 20 epochs will be required for effective generalisation of the data from the given dataset.
+  - **Validation**: Epoch count during training once model has been fitted
+  -**Model Output**: From early stopping, only 11 epochs were needed for suitable accuracy results.
+
 
 ---
 
@@ -81,12 +83,19 @@ the majority of infected leaves within the dataset.
 
 This project utilizes a Convolutional Neural Network (CNN) model built with TensorFlow and Keras. Given the visual complexity of distinguishing powdery mildew from healthy leaves, a CNN is well-suited for this image classification task.
 
-<!-- TODO update params number below -->
-- **Model Structure**: The model has approximately x params, trained on a dataset of 4,208 labelled images. It uses a binary classification approach to predict the likelihood of powdery mildew presence, per business requirement 2.
-  - *Learning Method*:
-    - 3 convolutional layers, each time reducing in filter size to iteratively refine patterns.
-    <!-- TODO Add further layers here -->
-    <!-- TODO ADD IMAGE -->
+- **Model Structure**: 
+  - ![Model Summary](outputs/v6/model_summary.png)
+- The model has 927,093 trainable params, trained on a dataset of 4,208 labelled images. It uses a binary
+classification approach to predict the likelihood of powdery mildew presence, per business requirement 2.
+  - *Learning Method Justification*:
+  - 3 convolutional layers, each decreasing in size for iterative refinement. The size was eventually reduced dramatically for all layers to reduce overfitting.
+  - After each convolutional layer, a max pooling layer has been used to achieve translation invariance, ensuring learnt patterns from that convolutional layer are retained. ([Further Information](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)).
+  - Relu activation has been chosen so that the neural network can learn nonlinear relationships between features and labels.
+  - Flattening has been equipped to ensure that a single dimensional matrix is passed to the first dense layer.
+  - Dropout has been set to 0.5 after the first large dense layer so that the model can generalise better to avoid overfitting.
+  - A single-neuron output layer using sigmoid activation is used for binary classification. Whilst softmax is a generalised version of sigmoid, the sigmoid algorithm mathematically provides a more streamlined output for binary classification as it outputs a direct probability for one of two classes. A dense layer of 2 neurons using softmax and categorical crossentropy *could* have been used, but this simply adds unnecessary complexity to the task at hand, being less computationally efficient for binary classificaion tasks.
+  [Sources](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
+
 - **Performance Metrics**:
   - **Success/Fail**: 97% accuracy or higher must be achieved after training the model.
     - **Result**: The model achieved high accuracy on the training set, consistently above 97%, reaching 99.88% accuracy for published version.
@@ -96,7 +105,6 @@ This project utilizes a Convolutional Neural Network (CNN) model built with Tens
     - **Model Output**: Early stopping showed a successful learning rate, stopping well before the 25th epoch, stopping at epoch 11.
   - **Epoch Length**: The model should not need to train for more than the number of batches available in the training data per epoch. Should less than 99% the training data be used, this will be considered a failure.
 
-<!-- TODO add specific choices in a model breakdown and why and sources for activation etc -->
 ### *Model Iterations Summary:*
 
 - v1:
