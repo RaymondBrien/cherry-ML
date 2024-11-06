@@ -68,7 +68,7 @@ def page_leaf_visualiser_body():
             image_montage(dir_path=my_data_dir + '/train',
                             label_to_display=label_to_display,
                             nrows=8, ncols=3, figsize=(10, 25))
-        st.write("---")
+
 
     st.write('---')
 
@@ -87,34 +87,27 @@ def page_leaf_visualiser_body():
         avg_var_healty = plt.imread(f"outputs/{version}/avg_var_healthy.png")
         avg_var_powdery_mildew = plt.imread(f"outputs/{version}/avg_var_powdery_mildew.png")
 
-        st.success(
             # TODO edit line breaks for whole page
+        st.success("**Conclusions:**")
+        st.write(
+            "- Whilst to the human eye, the mean variability image per label appears similar,"
+            "the distinction between individual images of each class are clearly visible from the"
+            "montage: patches of visible white mildew are present on infected leaves, and healthy "
+            "leaves appear more consistently green in color. This should not be difficult for a machine "
+            "learning model to learn. \n"
+            "- It is an appropriate problem for which a CNN will be able to provide a robust solution "
+            "according to the required accuracy metrics defined by the client's business requirements."
             # TODO decide where to put the text below: for more technical audience
-        ## Conclusions:
-        # - Whilst to the human eye, the mean average image per label appears similar,
-        # the distinction between individual images of each class are clearly visible from the
-        # montage: given the distinct color differences between healthy and infected leaves,
-        # this should not be difficult for a CNN to learn and is an appropriate problem for
-        # which a CNN will be able to provide a robust solution according to the required
-        # accuracy metrics defined by the client's business requirements.
-        # - The image dataset is overall very small for a CNN. Whilst developing the model,
-        # overfitting will be likely and Image augmentation will be neccessary for effective
-        # learning.
-
-            f" A significant visual difference in consistent colouring has been \n"
-            f" observed: \n"
-            f" We notice that the average and variability images of infected leaves \n"
-            f" have more white color blotches in their surface than a healthy leaf \n"
-            f" which presents more greenish uniform coloring.\n"
-            f" However the average and variability images did not show any clear patterns \n"
-            f" that could intuitively differentiate infected leaves and healthy leaves."
+            # "- The image dataset is overall very small for a CNN. Whilst developing the model,"
+            # "overfitting will be likely and Image augmentation will be neccessary for effective"
+            # "learning."
         )
 
         # TODO try with larger number (more than 100) - perhaps whole dataset?
         st.image(avg_var_healty, caption=f'Healthy Leaf **(mean average of dataset)**')
         st.image(avg_var_powdery_mildew, caption='Infected Leaf **(mean average of dataset)**')
 
-        st.write("---")
+
 
     st.write('---')
 
@@ -146,7 +139,6 @@ def page_leaf_visualiser_body():
 
         st.image(diff_between_avgs, caption='Difference between average images')
 
-        st.write('---')
 
     
 
