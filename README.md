@@ -196,8 +196,8 @@ The app dashboard provides an intuitive interface with five main pages for strea
 - **NumPy**: Array operations.
 - **Pandas**: Data manipulation.
 - **Matplotlib & Seaborn**: Data visualization.
-- **Streamlit**: Web application development for interactive deployment.
-- **Plotly**: Interactive plots in Jupyter notebooks.
+- **Streamlit**: Web application development library for dashboard build.
+- **Plotly**: Interactive plots for data visualisation.
 - **PIL**: Image processing.
 - **Joblib**: Saving/loading model and pipeline.
 
@@ -235,12 +235,14 @@ The app is hosted on Heroku, following these deployment steps:
 
 - **Project References**:
   - [Code Institute Malaria Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:code_institute+CI_DA_ML+2021_Q4/courseware/07a3964f7a72407ea3e073542a2955bd/29ae4b4c67ed45a8a97bb9f4dcfa714b/)
-  - Other project repositories: [GyanShashwat1611/WalkthroughProject01](https://github.com/GyanShashwat1611/WalkthroughProject01), [HaimanotA/Instant-Mildew-Detector](https://github.com/HaimanotA/Instant-Mildew-Detector), and [alerebal/Powdery Mildew](https://github.com/Code-Institute-Submissions/milestone-project-mildew-detection-in-cherry-leaves.git)
 
 - **Content Sources**:
-  - Streamlit documentation
-  - Wikipedia (for understanding powdery mildew infection)
-  - Code Institute Slack community
+- [Streamlit documentation](https://docs.streamlit.io/)
+- [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew)
+- Code Institute Slack community
+- [Towards Data Science](https://towardsdatascience.com/)
+- Alpkaan Celik
+
 
 - **Mentorship**: Special thanks to my mentor, **Precious Ijege**, for their invaluable support and guidance throughout the project.
 
