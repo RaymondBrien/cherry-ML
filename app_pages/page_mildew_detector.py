@@ -28,7 +28,7 @@ def page_mildew_detector_body():
     st.write('---')
 
     st.info(
-        "* Download a set of leaves containing both powdery mildew"
+        "* Download a set of leaves containing both powdery mildew "
         "or healthy leaves for live prediction.\n"
         "Images can be downloaded from "
         "[**here**](https://www.kaggle.com/codeinstitute/cherry-leaves)\n"

@@ -126,7 +126,7 @@ def page_leaf_visualiser_body():
             "It is worth noting that the leaf perimter outline is still overall present.\n"
             "This could be due to the fact that the average images are not "
             "representative of the entire dataset but a mean average.\n"
-            "WIth this in mind, it is clear that further technical handling of the "
+            "With this in mind, it is clear that further technical handling of the "
             "sets of images will be required to draw effective machine learning "
             "performance.\n"
         )
