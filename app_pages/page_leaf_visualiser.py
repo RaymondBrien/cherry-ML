@@ -63,7 +63,7 @@ def page_leaf_visualiser_body():
         if st.button("Create Montage"):
             # Show a spinner during a process
             with st.spinner(text="Loading"):
-                sleep(7)
+                sleep(10)
 
             image_montage(dir_path=my_data_dir + '/train',
                             label_to_display=label_to_display,
