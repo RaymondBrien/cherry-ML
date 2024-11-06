@@ -10,7 +10,7 @@ from src.data_management import load_pkl_file
 
 def plot_predictions_probabilities(pred_proba, pred_class):
     """
-    This function plots prediction probability results
+    Plot prediction probability results
     """
 
     prob_per_class = pd.DataFrame(
@@ -25,6 +25,7 @@ def plot_predictions_probabilities(pred_proba, pred_class):
     prob_per_class = prob_per_class.round(3)
     prob_per_class['Diagnostic'] = prob_per_class.index
 
+
     fig = px.bar(
         prob_per_class,
         x='Diagnostic',
@@ -32,6 +33,8 @@ def plot_predictions_probabilities(pred_proba, pred_class):
         range_y=[0, 1],
         width=600, height=300, template='seaborn')
     st.plotly_chart(fig)
+
+
 
 
 def resize_input_image(img, version):
