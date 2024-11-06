@@ -87,7 +87,6 @@ def page_leaf_visualiser_body():
         avg_var_healty = plt.imread(f"outputs/{version}/avg_var_healthy.png")
         avg_var_powdery_mildew = plt.imread(f"outputs/{version}/avg_var_powdery_mildew.png")
 
-            # TODO edit line breaks for whole page
         st.success("**Conclusions:**")
         st.write(
             "- Whilst to the human eye, the mean variability image per label appears similar,"
@@ -97,13 +96,9 @@ def page_leaf_visualiser_body():
             "learning model to learn. \n"
             "- It is an appropriate problem for which a CNN will be able to provide a robust solution "
             "according to the required accuracy metrics defined by the client's business requirements."
-            # TODO decide where to put the text below: for more technical audience
-            # "- The image dataset is overall very small for a CNN. Whilst developing the model,"
-            # "overfitting will be likely and Image augmentation will be neccessary for effective"
-            # "learning."
+
         )
 
-        # TODO try with larger number (more than 100) - perhaps whole dataset?
         st.image(avg_var_healty, caption=f'Healthy Leaf **(mean average of dataset)**')
         st.image(avg_var_powdery_mildew, caption='Infected Leaf **(mean average of dataset)**')
 
@@ -122,7 +117,6 @@ def page_leaf_visualiser_body():
     if st.checkbox("Difference between average healthy and average infected leaves"):
         diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
-        # TODO try other way around: x-y but also y-x to see if there are any insights?
         st.write(
             "Whilst we can see from the image montage that there are, more "
             "often than not, clear visual differences between individual healthy "
@@ -158,7 +152,6 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         img_idx = random.sample(images_list, nrows * ncols)
     else:
         st.warning(
-            # TODO add warning icon
             "Decrease the number of *rows* or *columns* to"
             "create your montage.\n"
             f"There are {len(images_list)} in your subset.\n"
