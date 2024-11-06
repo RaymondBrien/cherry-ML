@@ -4,7 +4,7 @@ import streamlit as st
 
 def page_summary_body():
 
-    st.write("### Brief Project Summary")
+    st.title('Project Summary:')
     st.write('---')
 
     st.info("**What is Mildew?**\n")
