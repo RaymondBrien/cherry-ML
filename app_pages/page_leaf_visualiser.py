@@ -57,7 +57,7 @@ def page_leaf_visualiser_body():
         my_data_dir = 'inputs/cherry-leaves-dataset/cherry-leaves'
         labels = os.listdir(my_data_dir + '/test')
         label_to_display = st.selectbox(
-            label="**Select leaf type:**", options=labels, index=0)
+            label="Select leaf type:", options=labels, index=0)
         st.write(CHECKBOX_INSTRUCTION)
 
         if st.button("Create Montage"):
