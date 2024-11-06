@@ -99,8 +99,8 @@ def page_leaf_visualiser_body():
 
         )
 
-        st.image(avg_var_healty, caption=f'Healthy Leaf **(mean average of dataset)**')
-        st.image(avg_var_powdery_mildew, caption='Infected Leaf **(mean average of dataset)**')
+        st.image(avg_var_healty, caption=f'Healthy Leaf (mean average variability)')
+        st.image(avg_var_powdery_mildew, caption='Infected Leaf (mean average variability)')
 
 
 
