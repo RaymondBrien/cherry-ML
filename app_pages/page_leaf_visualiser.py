@@ -24,7 +24,7 @@ def page_leaf_visualiser_body():
     CHECKBOX_INSTRUCTION = '\n**Click the checkbox below**\n'
 
     # page title
-    st.header("Cherry Leaves Visualiser")
+    st.title("Leaf Image Visualiser")
     st.write(
         "As part of the dataset exploration phase, this page provides a "
         "reference for observing the visual differences between **healthy** "
