@@ -225,10 +225,10 @@ The app is hosted on Heroku, following these deployment steps:
 > [!TIP]
 >
 > - Via heroku CLI:
-> Config via API key
-> `heroku config (use personal API link)`
-> set stack to stack 20
-> `heroku stack:set heroku-20 -a [app_name]`
+>   - Config via API key
+>   - `heroku config [personal API key]`
+>   - set stack to stack 20
+>   - `heroku stack:set heroku-20 -a [app_name]`
 
 - **Slug Size**: Managed large files by adding them to `.slugignore`.
 
@@ -246,8 +246,9 @@ The app is hosted on Heroku, following these deployment steps:
 - [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew)
 - Code Institute Slack community
 - [Towards Data Science](https://towardsdatascience.com/)
+- [Sources](https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning/)
+- [Further Information\](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/)
 - Alpkaan Celik
-
 
 - **Mentorship**: Special thanks to my mentor, **Precious Ijege**, for their invaluable support and guidance throughout the project.
 
