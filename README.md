@@ -157,12 +157,16 @@ The app dashboard provides an intuitive interface with five main pages for strea
 
 ### **Page 1: Quick Project Summary**
 
-- **Overview**: Brief introduction to powdery mildew and its impact on cherry plantations.
+*intended audience: general*
+
+- **Overview**: Brief introduction to powdery mildew and its impact on cherry plantations 
 - **Requirements Overview**: Displays the project’s business goals relating to ML objectives.
 
 ### **Page 2: Leaves Visualizer**
 
-- **Dataset Summary**: Information about dataset size, source, and class balance.
+*intended audience: general and technical*
+
+- **Dataset Summary**: Information about dataset size, source, and class balance 
 - **Visual Analysis Components**:
   - Image montage of healthy and powdery mildew-infected leaves for side-by-side comparison.
   - Mean variability displays for healthy and infected leaves.
@@ -170,17 +174,23 @@ The app dashboard provides an intuitive interface with five main pages for strea
 
 ### **Page 3: Powdery Mildew Detector**
 
-- **File Upload and Prediction**: Users can upload images for instant analysis.
+*intended audience: general*
+
+- **File Upload and Prediction**: Users can upload images for instant analysis 
 - **Prediction Output**: Displays a statement indicating whether the uploaded image shows a healthy or infected leaf.
 
 ### **Page 4: Project Hypothesis and Validation**
 
-- **Hypothesis Display**: Explanation of visual distinctions between healthy and infected leaves.
+*intended audience: general and technical*
+
+- **Hypothesis Display**: Explanation of visual distinctions between healthy and infected leaves 
 - **Validation Methods**: Visual comparisons and metrics proving the model’s accuracy.
 
 ### **Page 5: ML Performance Metrics**
 
-- **Label Frequency**: Shows the distribution of healthy and infected samples across training, validation, and test sets.
+*intended audience: technical*
+
+- **Label Frequency**: Shows the distribution of healthy and infected samples across training, validation, and test sets 
 - **Model History**: Plots for accuracy and loss over epochs.
 - **Evaluation Results**: Summary of model performance with metrics such as accuracy, loss, and F1 score.
 
